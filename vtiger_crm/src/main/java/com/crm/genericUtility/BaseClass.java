@@ -72,6 +72,7 @@ public void configAC() {
 
 @AfterSuite
 public void configAS() {
+	System.out.println("===this method is use to close the data base connection==");
 	System.out.println("===close DataBase connection");
 	dblib.closeDBConnection();
 }
