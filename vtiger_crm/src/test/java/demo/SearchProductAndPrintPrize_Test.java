@@ -3,7 +3,6 @@ package demo;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.List;
 import java.util.Properties;
 
 import org.apache.poi.EncryptedDocumentException;
@@ -57,14 +56,14 @@ public class SearchProductAndPrintPrize_Test {
 		//enter second product and capture the price
 		searchBox.clear();
 		searchBox.sendKeys(product2,Keys.ENTER);
-		WebElement secondElement = driver.findElement(By.xpath("//a[@class='WKTcLC']/..//div[contains(text(),'₹')]"));
-		String secondProductPrice = secondElement.getText();
+//		WebElement secondElement = driver.findElement(By.xpath("//a[@class='WKTcLC']/..//div[contains(text(),'₹')]"));
+		//String secondProductPrice = secondElement.getText();
 		
 		//enter third product and capture the price
 		searchBox.clear();
-		searchBox.sendKeys(product3,Keys.ENTER);
-		WebElement thirdElement = driver.findElement(By.xpath("//a[@class='wjcEIp']/..//div[contains(text(),'₹')]"));
-		String thirdProductPrice = thirdElement.getText();
+//		searchBox.sendKeys(product3,Keys.ENTER);
+//		WebElement thirdElement = driver.findElement(By.xpath("//a[@class='wjcEIp']/..//div[contains(text(),'₹')]"));
+		//String thirdProductPrice = thirdElement.getText();
 		
 		//write the data into excel
 		Sheet sh = wb1.getSheet("Flipkart");
@@ -76,7 +75,7 @@ public class SearchProductAndPrintPrize_Test {
 		wb1.close();
 		
 		
-//		//write xpth for product price
+//		//write xpath for product price
 //		List<WebElement> priceList = driver
 //				.findElements(By.xpath("//div[contains(text(),'Apple iPhone 16')]/../..//div[contains(text(),'₹')]"));
 //		
