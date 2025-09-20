@@ -24,6 +24,6 @@ public class PracticeClassTest {
 		
 		driver.findElement(By.xpath("//a[text()='Log in']")).click();
 		
-		Reporter.log("Login Page is Displayed.",true);/
+		Reporter.log("Login Page is Displayed.",true);
 	}
 }
