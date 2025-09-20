@@ -23,7 +23,9 @@ public class PracticeClassTest {
 		driver.get("https://demowebshop.tricentis.com/");
 		
 		driver.findElement(By.xpath("//a[text()='Log in']")).click();
-		
+		//verify login page is Displayed or not
+		 String title=driver.getTitle();
+		Assert.assertEquals(driver.getTitle(),title,"Login Page is not Displayed ====> test case is fail")
 		Reporter.log("Login Page is Displayed.",true);
 	}
 }
