@@ -32,7 +32,8 @@ public void configBS() {
 @BeforeClass
 public void configBC() throws IOException {
 	System.out.println("===Launch the Browser===");
-	String browser=flib.getDataFromPropertyFile("browser");
+	//String browser=flib.getDataFromPropertyFile("browser");
+	String browser=System.getProperty("browser", flib.getDataFromPropertyFile("browser"));
 	if(browser.equals("chrome")) {
 		driver=new ChromeDriver();
 	}else if(browser.equals("firefox")) {
@@ -49,9 +50,12 @@ public void configBC() throws IOException {
 @BeforeMethod
 public void configBM() throws IOException {
 	System.out.println("===login===");
-	String url=flib.getDataFromPropertyFile("url");
-	String username=flib.getDataFromPropertyFile("username");
-	String password=flib.getDataFromPropertyFile("password");
+//	String url=flib.getDataFromPropertyFile("url");
+//	String username=flib.getDataFromPropertyFile("username");
+//	String password=flib.getDataFromPropertyFile("password");
+	String url=System.getProperty("url", flib.getDataFromPropertyFile("url"));
+	String username=System.getProperty("username", flib.getDataFromPropertyFile("username"));
+	String password=System.getProperty("password", flib.getDataFromPropertyFile("password"));
 	LoginPage lp=new LoginPage(driver);
 	lp.logintoApp(url, username, password);
 	
